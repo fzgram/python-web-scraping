@@ -1,45 +1,50 @@
-# Web Scraping with Python Selenium
+# Web Scraping with Python and Selenium
 
-## Installing Python if needed
+## Installing Python
 
-1. Download Python Installer:
-Go to the official Python website: python.org/downloads.
-Download the latest version of Python for Windows.
+1. **Download Python Installer**:
+   - Visit the official Python website: [python.org/downloads](https://www.python.org/downloads/).
+   - Download the latest version of Python for your operating system.
 
-2. Run the Installer:
-Double-click the downloaded .exe file to launch the installer.
-IMPORTANT: Check the box that says "Add Python to PATH" before clicking Install.
+2. **Run the Installer**:
+   - Double-click the downloaded `.exe` file to launch the installer.
+   - **Important**: Check the box labeled "Add Python to PATH" before clicking **Install**.
 
-3. Verify Installation:
-Open Command Prompt.
-Type python --version and press Enter. If installed correctly, it will display the installed Python version.
+3. **Verify Installation**:
+   - Open **Command Prompt**.
+   - Type the following command and press **Enter**:
+     ```sh
+     python --version
+     ```
+   - If Python is installed correctly, the installed version will be displayed.
 
 ## Installing Selenium
 
-1. Create a virtual environment:
+1. **Create a Virtual Environment**:
+   - Run the following command to create a virtual environment:
+     ```sh
+     python -m venv .env
+     ```
 
-```sh
-python -m venv .env
-```
+2. **Install Selenium**:
+   - Use `pip` to install Selenium:
+     ```sh
+     pip install selenium
+     ```
 
-2. Install Selenium using pip:
+## Running the Python Script
 
-```sh
-pip install selenium
-```
+1. **Navigate to the 'src' Folder**:
+   - Ensure you're in the directory containing your Python script.
 
-## Running Python Script
-1. Open 'src' folder
+2. **Set the Last Page Number**:
+   - Open the `requirements.txt` file and update the last page number as needed.
 
-2. Set last page number
+3. **Open Command Prompt in the 'src' Folder**:
+   - Open **Command Prompt** and navigate to the `src` folder.
 
-Open 'requirements.txt' and set the page number
-
-3. Open Command Prompt in 'src' folder
-
-4. Run Python Script
-
-```sh
-python main.py
-```
-
+4. **Run the Python Script**:
+   - Execute the script using the following command:
+     ```sh
+     python main.py
+     ```
