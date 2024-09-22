@@ -20,13 +20,16 @@
 
 ## Installing Selenium
 
-1. **Create a Virtual Environment**:
+1. **Navigate to the 'src' Folder**:
+   - Ensure you're in the directory containing your Python script.
+
+2. **Create a Virtual Environment**:
    - Run the following command to create a virtual environment:
      ```sh
      python -m venv .env
      ```
 
-2. **Install Selenium**:
+3. **Install Selenium**:
    - Use `pip` to install Selenium:
      ```sh
      pip install selenium

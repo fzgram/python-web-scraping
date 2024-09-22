@@ -1,8 +1,8 @@
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.common.by import By
 
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 # from selenium.common.exceptions import StaleElementReferenceException
 
 import os
@@ -39,16 +39,14 @@ def get_data(url: str):
     driver = Chrome(options=browser_options)
     driver.get(url)
     
-    # iframe = driver.find_element(By.TAG_NAME, "iframe")
-    # driver.switch_to.frame(iframe)
-
-    # wait = WebDriverWait(driver, 10)
-    # element = wait.until(EC.element_to_be_clickable((By.ID, "_idJsp2:_idJsp11")))
-    
     # print(driver.page_source)
     
     tab = driver.find_element(By.CSS_SELECTOR, 'a#_idJsp5\\:_idJsp14')
     tab.click()
+    
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Изтегли броя")))
+    
     download_btns_count = len(driver.find_elements(By.LINK_TEXT, "Изтегли броя"))
     
     text = open("./requirements.txt")
@@ -80,17 +78,6 @@ def get_data(url: str):
         i += 1
         next_btn = driver.find_element(By.LINK_TEXT, "Следваща.. »")
         next_btn.click()
-    
-    # for book in books:
-    #     title = book.find_element(By.CSS_SELECTOR, "h3 > a")
-    #     price = book.find_element(By.CSS_SELECTOR, ".price_color")
-    #     stock = book.find_element(By.CSS_SELECTOR, ".instock.availability")
-    #     book_item = {
-    #         'title': title.get_attribute("title"),
-    #         'price': price.text,
-    #         'stock': stock.text
-    #     }
-    #     data.append(book_item)
 
     time.sleep(10)
     driver.quit()
