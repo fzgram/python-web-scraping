@@ -71,7 +71,7 @@ def get_data(url: str):
             # wait until download has completed.
             is_download_complete(download_dir)
             
-            close_btn = driver.find_element(By.CSS_SELECTOR, "img[src='/DVWeb/img/exit.gif'][onclick='hideDownloadModalPanel()']")
+            close_btn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "img[src='/DVWeb/img/exit.gif'][onclick='hideDownloadModalPanel()']")))
             close_btn.click()
             print(f"end {i*download_btns_count + j +1}")
             
