@@ -49,7 +49,7 @@ def get_data(url: str):
     
     download_btns_count = len(driver.find_elements(By.LINK_TEXT, "Изтегли броя"))
     
-    text = open("./requirements.txt")
+    text = open("./config.txt")
     page_count = text.readline().strip().split('=')[1].strip()
     page_count = int(page_count)
     print('page counts: ', page_count)
